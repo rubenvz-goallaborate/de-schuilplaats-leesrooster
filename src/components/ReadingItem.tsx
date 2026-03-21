@@ -10,7 +10,6 @@ export default function ReadingItem({ reading, index, isComplete, isCatchup, onT
   return (
     <button
       onClick={() => onToggle(index)}
-      disabled={isComplete}
       role="checkbox"
       aria-checked={isComplete}
       className={`w-full flex items-center gap-3 p-3 rounded-lg text-left transition-opacity ${

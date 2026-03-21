@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { REFERENCE_YEAR } from '../config'
 import { getActiveYear, getActiveTrack, getReadingsForDay } from '../lib/schedule'
-import { getDayProgress, setReadingComplete } from '../lib/progress'
+import { getDayProgress, setReadingComplete, unsetReadingComplete } from '../lib/progress'
 import { calculateStreak } from '../lib/streak'
 import ReadingItem from './ReadingItem'
 
@@ -29,7 +29,7 @@ export default function TodayScreen() {
     const days: PendingDay[] = []
 
     // Ophaallijst: 1 jan t/m gisteren, alleen als er een entry bestaat maar niet compleet
-    const startOfYear = new Date(REFERENCE_YEAR, 0, 1)
+    const startOfYear = new Date(year, 0, 1)
     const yesterday = new Date(today)
     yesterday.setDate(today.getDate() - 1)
 
@@ -74,7 +74,11 @@ export default function TodayScreen() {
 
   function handleToggle(dayIndex: number, readingIndex: 0 | 1) {
     const d = pendingDays[dayIndex]
-    setReadingComplete(d.year, d.month, d.day, readingIndex)
+    if (d.progress[readingIndex] !== null) {
+      unsetReadingComplete(d.year, d.month, d.day, readingIndex)
+    } else {
+      setReadingComplete(d.year, d.month, d.day, readingIndex)
+    }
     buildPendingList()
   }
 

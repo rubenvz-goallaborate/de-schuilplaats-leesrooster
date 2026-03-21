@@ -32,6 +32,13 @@ export function setReadingComplete(year: number, month: number, day: number, ind
   saveProgress(progress)
 }
 
+export function unsetReadingComplete(year: number, month: number, day: number, index: 0 | 1): void {
+  const progress = getProgress()
+  if (!progress[year]?.[month]?.[day]) return
+  progress[year][month][day][index] = null
+  saveProgress(progress)
+}
+
 export function isDayComplete(year: number, month: number, day: number): boolean {
   const [r1, r2] = getDayProgress(year, month, day)
   return r1 !== null && r2 !== null
