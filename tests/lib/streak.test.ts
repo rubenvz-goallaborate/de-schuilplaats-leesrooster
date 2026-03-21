@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach, vi, afterEach } from 'vitest'
 import { calculateStreak } from '../../src/lib/streak'
 import { setReadingComplete } from '../../src/lib/progress'
-import { mockLocalStorage } from '../../src/lib/testUtils'
+import { mockLocalStorage } from '../testUtils'
 
 beforeEach(() => {
   vi.stubGlobal('localStorage', mockLocalStorage())

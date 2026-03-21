@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest'
 import { getProgress, setReadingComplete, isDayComplete, isDayPartial, isDayCompleteOnTime } from '../../src/lib/progress'
-import { mockLocalStorage } from '../../src/lib/testUtils'
+import { mockLocalStorage } from '../testUtils'
 
 beforeEach(() => {
   const mock = mockLocalStorage()

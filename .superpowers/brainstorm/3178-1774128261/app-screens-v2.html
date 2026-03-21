@@ -1,0 +1,139 @@
+<h2>App schermen v2 — met ophaal-stapeling</h2>
+<p class="subtitle">Bijgewerkt: gemiste lezingen stapelen op in "Vandaag". Jaar loopt automatisch. Klik om te selecteren.</p>
+
+<div class="cards">
+
+  <!-- Screen 1: Vandaag met catch-up -->
+  <div class="card" data-choice="today" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#f8f6f2;padding:16px;font-family:sans-serif;">
+      <div style="background:#5c4a2a;color:white;padding:8px 12px;border-radius:8px 8px 0 0;font-size:11px;font-weight:bold;">
+        DE SCHUILPLAATS · LEESROOSTER
+      </div>
+      <div style="background:white;border-radius:0 0 8px 8px;padding:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+        <div style="font-size:10px;color:#888;margin-bottom:4px;">ZATERDAG 21 MAART · JAAR 1 · FAMILIE</div>
+        <div style="font-size:14px;font-weight:bold;color:#333;margin-bottom:10px;">Te lezen <span style="background:#c0392b;color:white;border-radius:10px;padding:1px 7px;font-size:11px;">4</span></div>
+
+        <!-- Missed day label -->
+        <div style="font-size:9px;color:#c0392b;font-weight:bold;text-transform:uppercase;margin-bottom:4px;">Ingehaald — 20 maart</div>
+        <div style="background:#fff0ef;border:1px solid #f5c6c3;border-radius:6px;padding:8px;margin-bottom:5px;display:flex;align-items:center;gap:8px;">
+          <div style="width:16px;height:16px;border:2px solid #c0392b;border-radius:4px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:#333;">Lukas 22</div><div style="font-size:9px;color:#888;">Lezing 1</div></div>
+        </div>
+        <div style="background:#fff0ef;border:1px solid #f5c6c3;border-radius:6px;padding:8px;margin-bottom:10px;display:flex;align-items:center;gap:8px;">
+          <div style="width:16px;height:16px;border:2px solid #c0392b;border-radius:4px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:#333;">Johannes 2</div><div style="font-size:9px;color:#888;">Lezing 2</div></div>
+        </div>
+
+        <!-- Today label -->
+        <div style="font-size:9px;color:#5c4a2a;font-weight:bold;text-transform:uppercase;margin-bottom:4px;">Vandaag — 21 maart</div>
+        <div style="background:#f0ebe1;border-radius:6px;padding:8px;margin-bottom:5px;display:flex;align-items:center;gap:8px;">
+          <div style="width:16px;height:16px;border:2px solid #5c4a2a;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;">
+            <div style="width:8px;height:8px;background:#5c4a2a;border-radius:2px;"></div>
+          </div>
+          <div><div style="font-size:11px;font-weight:600;color:#333;">Lukas 23</div><div style="font-size:9px;color:#888;">Lezing 1 · afgevinkt</div></div>
+        </div>
+        <div style="background:#f0ebe1;border-radius:6px;padding:8px;display:flex;align-items:center;gap:8px;">
+          <div style="width:16px;height:16px;border:2px solid #ccc;border-radius:4px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:#333;">Johannes 3</div><div style="font-size:9px;color:#888;">Lezing 2</div></div>
+        </div>
+
+        <div style="margin-top:10px;background:#e8f4e8;border-radius:6px;padding:6px;text-align:center;">
+          <div style="font-size:10px;color:#4a7c4a;font-weight:600;">🔥 12 dagen op rij gelezen</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Vandaag (met ophalen)</h3>
+      <p>Gemiste lezingen van vorige dagen staan rood bovenaan. Vandaag eronder. Teller toont hoeveel er nog open staan.</p>
+    </div>
+  </div>
+
+  <!-- Screen 2: Kalender -->
+  <div class="card" data-choice="calendar" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#f8f6f2;padding:16px;font-family:sans-serif;">
+      <div style="background:#5c4a2a;color:white;padding:8px 12px;border-radius:8px 8px 0 0;font-size:11px;font-weight:bold;">
+        DE SCHUILPLAATS · LEESROOSTER
+      </div>
+      <div style="background:white;border-radius:0 0 8px 8px;padding:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+        <div style="font-size:14px;font-weight:bold;color:#333;margin-bottom:8px;">Maart</div>
+        <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:3px;text-align:center;">
+          <div style="font-size:8px;color:#888;">M</div><div style="font-size:8px;color:#888;">D</div><div style="font-size:8px;color:#888;">W</div><div style="font-size:8px;color:#888;">D</div><div style="font-size:8px;color:#888;">V</div><div style="font-size:8px;color:#888;">Z</div><div style="font-size:8px;color:#888;">Z</div>
+          <div></div><div></div><div></div><div></div><div></div>
+          <div style="font-size:8px;background:#5c4a2a;color:white;border-radius:3px;padding:2px;">1</div>
+          <div style="font-size:8px;color:#888;padding:2px;">2</div>
+          <div style="font-size:8px;background:#5c4a2a;color:white;border-radius:3px;padding:2px;">3</div>
+          <div style="font-size:8px;background:#5c4a2a;color:white;border-radius:3px;padding:2px;">4</div>
+          <div style="font-size:8px;background:#5c4a2a;color:white;border-radius:3px;padding:2px;">5</div>
+          <div style="font-size:8px;background:#5c4a2a;color:white;border-radius:3px;padding:2px;">6</div>
+          <div style="font-size:8px;background:#5c4a2a;color:white;border-radius:3px;padding:2px;">7</div>
+          <div style="font-size:8px;background:#5c4a2a;color:white;border-radius:3px;padding:2px;">8</div>
+          <div style="font-size:8px;background:#5c4a2a;color:white;border-radius:3px;padding:2px;">9</div>
+          <div style="font-size:8px;background:#5c4a2a;color:white;border-radius:3px;padding:2px;">10</div>
+          <div style="font-size:8px;background:#5c4a2a;color:white;border-radius:3px;padding:2px;">11</div>
+          <div style="font-size:8px;background:#5c4a2a;color:white;border-radius:3px;padding:2px;">12</div>
+          <div style="font-size:8px;background:#a0845c;color:white;border-radius:3px;padding:2px;">13</div>
+          <div style="font-size:8px;background:#5c4a2a;color:white;border-radius:3px;padding:2px;">14</div>
+          <div style="font-size:8px;background:#5c4a2a;color:white;border-radius:3px;padding:2px;">15</div>
+          <div style="font-size:8px;background:#5c4a2a;color:white;border-radius:3px;padding:2px;">16</div>
+          <div style="font-size:8px;background:#5c4a2a;color:white;border-radius:3px;padding:2px;">17</div>
+          <div style="font-size:8px;background:#5c4a2a;color:white;border-radius:3px;padding:2px;">18</div>
+          <div style="font-size:8px;background:#5c4a2a;color:white;border-radius:3px;padding:2px;">19</div>
+          <div style="font-size:8px;background:#c0392b;color:white;border-radius:3px;padding:2px;">20</div>
+          <div style="font-size:8px;border:2px solid #5c4a2a;border-radius:3px;padding:2px;font-weight:bold;">21</div>
+          <div style="font-size:8px;color:#ccc;padding:2px;">22</div>
+          <div style="font-size:8px;color:#ccc;padding:2px;">23</div>
+        </div>
+        <div style="margin-top:8px;font-size:9px;color:#888;display:flex;gap:8px;flex-wrap:wrap;">
+          <span><span style="color:#5c4a2a">■</span> Volledig</span>
+          <span><span style="color:#a0845c">■</span> Half</span>
+          <span><span style="color:#c0392b">■</span> Gemist</span>
+          <span>□ Vandaag</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Kalender</h3>
+      <p>Rood = gemiste dag (staat ook in de ophaallijst). Lichtbruin = half gelezen. Donker = volledig.</p>
+    </div>
+  </div>
+
+  <!-- Screen 3: Instellingen zonder jaarkeuze -->
+  <div class="card" data-choice="settings" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#f8f6f2;padding:16px;font-family:sans-serif;">
+      <div style="background:#5c4a2a;color:white;padding:8px 12px;border-radius:8px 8px 0 0;font-size:11px;font-weight:bold;">
+        DE SCHUILPLAATS · INSTELLINGEN
+      </div>
+      <div style="background:white;border-radius:0 0 8px 8px;padding:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+
+        <div style="background:#f0ebe1;border-radius:6px;padding:10px;margin-bottom:10px;">
+          <div style="font-size:9px;color:#888;text-transform:uppercase;margin-bottom:3px;">Huidig leesrooster</div>
+          <div style="font-size:12px;font-weight:bold;color:#5c4a2a;">Jaar 1 · Familie lezingen</div>
+          <div style="font-size:9px;color:#888;margin-top:2px;">Gestart 1 jan 2026 · samen met de gemeente</div>
+        </div>
+
+        <div style="margin-bottom:10px;">
+          <div style="font-size:9px;color:#888;text-transform:uppercase;margin-bottom:4px;">Dagelijkse herinnering</div>
+          <div style="background:#f0ebe1;border-radius:6px;padding:8px;display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+            <span style="font-size:11px;color:#333;">Melding aan</span>
+            <div style="background:#5c4a2a;border-radius:10px;width:28px;height:16px;position:relative;">
+              <div style="background:white;border-radius:50%;width:12px;height:12px;position:absolute;right:2px;top:2px;"></div>
+            </div>
+          </div>
+          <div style="background:#f0ebe1;border-radius:6px;padding:8px;display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:11px;color:#333;">Tijd</span>
+            <span style="font-size:11px;font-weight:bold;color:#5c4a2a;">08:00</span>
+          </div>
+        </div>
+
+        <div style="font-size:9px;color:#aaa;text-align:center;">De Schuilplaats Enschede · v1.0</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Instellingen</h3>
+      <p>Geen jaarkeuze meer — de app toont automatisch het juiste jaar. Alleen notificatietijd instelbaar.</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:16px;">Klik op schermen om te selecteren. Reageer in de terminal.</p>

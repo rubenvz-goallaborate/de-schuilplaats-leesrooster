@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest'
 import { getSettings, saveSettings } from '../../src/lib/settings'
-import { mockLocalStorage } from '../../src/lib/testUtils'
+import { mockLocalStorage } from '../testUtils'
 
 beforeEach(() => {
   vi.stubGlobal('localStorage', mockLocalStorage())

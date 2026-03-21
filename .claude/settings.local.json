@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(/Users/ruben/.claude/plugins/cache/superpowers-dev/superpowers/5.0.2/skills/brainstorming/scripts/start-server.sh --project-dir \"/Users/ruben/Documents/De Schuilplaats App\")",
+      "Bash(npm create:*)",
+      "Bash(npm show:*)",
+      "Bash(npm --version)",
+      "Bash(npm install:*)",
+      "Bash(npx tailwindcss:*)",
+      "Bash(timeout 15 npm run dev)",
+      "Bash(npx tsc:*)",
+      "Bash(grep -E \"\\\\.gitignore|^d.*\\\\.git$\")",
+      "Bash(git -C \"/Users/ruben/Documents/De Schuilplaats App\" log --oneline)",
+      "Bash(npm run:*)",
+      "Bash(npx vitest:*)",
+      "Bash(node -e \"console.log\\(\\(2024 - 2025\\) % 2, \\(2023 - 2025\\) % 2, \\(-1\\) % 2, \\(-2\\) % 2\\)\")",
+      "Bash(python3 -c \":*)",
+      "Bash(file public/icons/icon-*.png)",
+      "Bash(npm test:*)"
+    ]
+  }
+}
