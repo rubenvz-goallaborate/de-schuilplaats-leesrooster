@@ -29,7 +29,7 @@ export default function TodayScreen() {
     const days: PendingDay[] = []
 
     // Ophaallijst: 1 jan t/m gisteren, alleen als er een entry bestaat maar niet compleet
-    const startOfYear = new Date(year, 0, 1)
+    const startOfYear = new Date(REFERENCE_YEAR, 0, 1)
     const yesterday = new Date(today)
     yesterday.setDate(today.getDate() - 1)
 
@@ -124,16 +124,14 @@ export default function TodayScreen() {
               )}
               <div className="space-y-2">
                 {d.readings.map((reading, readingIndex) => (
-                  d.progress[readingIndex as 0 | 1] === null && (
-                    <ReadingItem
-                      key={readingIndex}
-                      reading={reading}
-                      index={readingIndex}
-                      isComplete={false}
-                      isCatchup={d.isCatchup}
-                      onToggle={(i) => handleToggle(dayIndex, i as 0 | 1)}
-                    />
-                  )
+                  <ReadingItem
+                    key={readingIndex}
+                    reading={reading}
+                    index={readingIndex}
+                    isComplete={d.progress[readingIndex as 0 | 1] !== null}
+                    isCatchup={d.isCatchup}
+                    onToggle={(i) => handleToggle(dayIndex, i as 0 | 1)}
+                  />
                 ))}
               </div>
             </div>
