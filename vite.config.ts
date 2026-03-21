@@ -9,7 +9,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['icons/*.png'],
+      includeAssets: ['icons/*.png', 'sw-custom.js'],
       manifest: {
         name: 'De Schuilplaats Leesrooster',
         short_name: 'Leesrooster',
@@ -21,6 +21,10 @@ export default defineConfig({
           { src: 'icons/icon-192.png', sizes: '192x192', type: 'image/png' },
           { src: 'icons/icon-512.png', sizes: '512x512', type: 'image/png' },
         ],
+      },
+      workbox: {
+        additionalManifestEntries: [{ url: '/sw-custom.js', revision: null }],
+        importScripts: ['/sw-custom.js'],
       },
     }),
   ],
