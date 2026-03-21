@@ -2,7 +2,7 @@ import { readingPlan } from '../data/readingPlan'
 import type { ActiveTrack } from '../types'
 
 export function getActiveYear(currentYear: number, referenceYear: number): 1 | 2 {
-  return ((currentYear - referenceYear) % 2 === 0) ? 1 : 2
+  return ((currentYear - referenceYear) % 2 + 2) % 2 === 0 ? 1 : 2
 }
 
 export function getActiveTrack(activeYear: 1 | 2): ActiveTrack {
@@ -19,11 +19,10 @@ export function getReadingsForDay(
   return dayData[track]
 }
 
-export function getTodayReadings(referenceYear: number): [string, string] | null {
-  const now = new Date()
-  const year = now.getFullYear()
-  const month = now.getMonth() + 1
-  const day = now.getDate()
+export function getTodayReadings(referenceYear: number, date: Date = new Date()): [string, string] | null {
+  const year = date.getFullYear()
+  const month = date.getMonth() + 1
+  const day = date.getDate()
   const activeYear = getActiveYear(year, referenceYear)
   const track = getActiveTrack(activeYear)
   return getReadingsForDay(month, day, track)
