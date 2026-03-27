@@ -55,7 +55,7 @@ export default function TodayScreen() {
     const todayDay = today.getDate()
     const todayReadings = getReadingsForDay(todayMonth, todayDay, track)
     const todayProgress = getDayProgress(year, todayMonth, todayDay)
-    if (todayReadings && (todayProgress[0] === null || todayProgress[1] === null)) {
+    if (todayReadings) {
       days.push({
         year,
         month: todayMonth,
@@ -106,6 +106,13 @@ export default function TodayScreen() {
           )}
         </div>
       </div>
+
+      {totalPending === 0 && pendingDays.length > 0 && (
+        <div className="text-center py-4 text-stone-400 mb-2">
+          <div className="text-3xl mb-1">✅</div>
+          <p className="font-medium text-sm">Alles gelezen voor vandaag!</p>
+        </div>
+      )}
 
       {pendingDays.length === 0 ? (
         <div className="text-center py-12 text-stone-400">
