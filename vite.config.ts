@@ -23,6 +23,8 @@ export default defineConfig({
         ],
       },
       workbox: {
+        skipWaiting: true,
+        clientsClaim: true,
         additionalManifestEntries: [{ url: '/sw-custom.js', revision: null }],
         importScripts: ['/sw-custom.js'],
       },
